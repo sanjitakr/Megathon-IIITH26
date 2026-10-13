@@ -1,0 +1,21 @@
+[project]
+name = "green-home-engine"
+version = "0.1.0"
+description = "Physics-based home simulator, ML surrogates, retrofit planner and verified LLM explanations"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy", "pandas", "pyarrow", "scipy", "scikit-learn", "lightgbm", "joblib",
+    "pydantic>=2", "fastapi", "uvicorn[standard]", "httpx", "requests",
+    "streamlit", "plotly",
+]
+
+[project.optional-dependencies]
+extras = ["optuna", "catboost", "xgboost", "shap"]
+dev = ["pytest"]
+
+[tool.setuptools]
+packages = ["sim", "gen", "ml", "engine", "llm", "api"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

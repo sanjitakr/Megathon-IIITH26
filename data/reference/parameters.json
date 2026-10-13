@@ -1,0 +1,64 @@
+{
+  "_meta": {
+    "status": "PLACEHOLDER starting values. Replace from SAP 10.2 / RdSAP 10 tables and TABULA/EPISCOPE, then record version and access date here.",
+    "version": "0.1-placeholder",
+    "recorded": "2026-10-10",
+    "verify": ["u_wall", "u_roof", "u_floor", "u_window", "air_change_by_age", "boiler_efficiency", "heat_pump", "hdd_base_c", "self_consumption_curve", "battery", "hot_water", "appliances"]
+  },
+  "age_bands": {
+    "A": "pre-1900", "B": "1900-1929", "C": "1930-1949", "D": "1950-1966", "E": "1967-1975",
+    "F": "1976-1982", "G": "1983-1990", "H": "1991-1995", "I": "1996-2002", "J": "2003-2006", "K": "2007+"
+  },
+  "storey_height_m": 2.4,
+  "glazing_ratio": 0.18,
+  "pitched_roof_area_factor": 1.1,
+  "exposure": {"detached": 1.0, "semi": 0.75, "end_terrace": 0.75, "terraced": 0.5, "flat": 0.5, "bungalow": 1.0},
+  "default_storeys": {"detached": 2, "semi": 2, "end_terrace": 2, "terraced": 2, "flat": 1, "bungalow": 1},
+  "flat_roof_floor_exposure": 0.33,
+  "u_wall": {
+    "solid": 2.1, "cavity_unfilled": 1.5, "cavity_filled": 0.55, "system_build": 1.7,
+    "solid_insulated": 0.30, "system_insulated": 0.35
+  },
+  "u_wall_age_cap": {"F": 1.0, "G": 0.6, "H": 0.6, "I": 0.45, "J": 0.35, "K": 0.30},
+  "u_roof": {"none": 2.3, "under_100": 0.6, "100_250": 0.3, "over_250": 0.16},
+  "u_roof_flat_by_age": {"A": 2.3, "B": 2.3, "C": 2.3, "D": 2.3, "E": 2.3, "F": 1.5, "G": 0.68, "H": 0.4, "I": 0.35, "J": 0.25, "K": 0.2},
+  "u_floor": {"solid": 0.7, "suspended": 0.7, "insulated": 0.25},
+  "u_floor_age_cap": {"H": 0.45, "I": 0.25, "J": 0.25, "K": 0.22},
+  "u_window": {"single": 4.8, "double_old": 2.8, "double_modern": 1.6, "triple": 0.8, "mixed": 3.3, "secondary": 2.4},
+  "air_change_by_age": {"A": 1.0, "B": 0.95, "C": 0.9, "D": 0.85, "E": 0.8, "F": 0.75, "G": 0.7, "H": 0.65, "I": 0.6, "J": 0.55, "K": 0.5},
+  "draught_proofing_factor": 0.85,
+  "boiler_efficiency": {
+    "gas_boiler": {"under_5": 0.89, "5_10": 0.86, "10_15": 0.80, "over_15": 0.70},
+    "lpg_boiler": {"under_5": 0.89, "5_10": 0.86, "10_15": 0.80, "over_15": 0.70},
+    "oil_boiler": {"under_5": 0.87, "5_10": 0.84, "10_15": 0.78, "over_15": 0.68}
+  },
+  "other_heating_efficiency": {"electric": 1.0, "other": 0.6},
+  "dhw_from_boiler_efficiency_factor": 0.9,
+  "heat_pump": {
+    "scop_base": 3.0, "scop_min": 1.8, "scop_max": 4.5,
+    "readiness_hlp": 2.0, "scop_penalty_per_hlp": 0.4, "scop_dhw": 2.5
+  },
+  "controls_factor": {"none": 1.0, "programmer": 0.95, "smart_thermostat": 0.90, "smart_trvs": 0.86},
+  "hot_water": {"a0": 600.0, "a1": 450.0},
+  "solar_thermal_fraction": 0.5,
+  "appliances": {"a0": 1200.0, "a1": 400.0, "a2": 8.0},
+  "lighting_kwh_per_m2_rating": 4.5,
+  "cooking_gas_kwh": 250.0,
+  "hdd_base_c": 15.5,
+  "solar": {
+    "orientation_factor": {"S": 1.0, "SE_SW": 0.95, "E_W": 0.82, "N": 0.6, "unknown": 0.9},
+    "shading_factor": {"none": 1.0, "some": 0.85, "heavy": 0.6, "unknown": 0.95},
+    "m2_per_kwp": 5.5,
+    "default_max_kwp": 4.0,
+    "min_free_roof_m2": 10.0
+  },
+  "self_consumption_curve": {"load_to_generation_ratio": [0.0, 0.25, 0.5, 1.0, 2.0, 4.0, 8.0], "f_sc": [0.0, 0.15, 0.25, 0.35, 0.45, 0.55, 0.65]},
+  "battery": {"eta_charge": 0.95, "eta_discharge": 0.95, "cycles_per_day": 1.0, "usable_fraction": 0.9, "grid_charging": false},
+  "kappa_global": 0.65,
+  "appliance_scale_global": 1.0,
+  "air_change_scale_global": 1.0,
+  "boiler_efficiency_offset_global": 0.0,
+  "home_calibration": {"kappa_min": 0.4, "kappa_max": 1.6, "alpha_min": 0.3, "alpha_max": 3.0, "tolerance": 0.03},
+  "electricity_monthly_shape": [1.15, 1.08, 1.03, 0.95, 0.90, 0.85, 0.85, 0.86, 0.92, 1.00, 1.12, 1.20],
+  "days_in_month": [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+}

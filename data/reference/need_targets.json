@@ -1,0 +1,14 @@
+{
+  "_meta": {
+    "status": "PLACEHOLDER medians (kWh/yr) recalled approximately from DESNZ NEED consumption tables. Replace with the published NEED tables (record edition) before calibration results are reported.",
+    "source": "DESNZ National Energy Efficiency Data-Framework (verify edition)",
+    "recorded": "2026-10-10",
+    "model": "cell median = overall median x type factor x age factor"
+  },
+  "gas_overall_median": 11500,
+  "electricity_overall_median": 2700,
+  "gas_type_factor": {"detached": 1.30, "semi": 1.02, "end_terrace": 0.96, "terraced": 0.90, "bungalow": 0.96, "flat": 0.65},
+  "electricity_type_factor": {"detached": 1.35, "semi": 1.07, "end_terrace": 0.98, "terraced": 0.95, "bungalow": 0.95, "flat": 0.78},
+  "gas_age_factor": {"A": 1.22, "B": 1.15, "C": 1.10, "D": 1.03, "E": 0.98, "F": 0.95, "G": 0.90, "H": 0.87, "I": 0.84, "J": 0.80, "K": 0.77},
+  "electricity_age_factor": {"A": 1.02, "B": 1.0, "C": 1.0, "D": 0.98, "E": 0.98, "F": 0.98, "G": 1.0, "H": 1.0, "I": 1.02, "J": 1.02, "K": 1.03}
+}

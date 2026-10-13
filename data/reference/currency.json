@@ -1,0 +1,9 @@
+{
+  "_meta": {
+    "status": "PLACEHOLDER exchange rate. The engine calculates in GBP internally (catalogue costs and energy prices are GBP placeholders); every amount shown to users, and every amount they type in, is converted at this rate. Converted figures are not local market prices.",
+    "recorded": "2026-10-11"
+  },
+  "code": "INR",
+  "symbol": "₹",
+  "per_gbp": 112.0
+}

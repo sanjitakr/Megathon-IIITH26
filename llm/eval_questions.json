@@ -1,0 +1,433 @@
+{
+ "profiles": {
+  "semi_gas_tierA": {
+   "postcode": "LS6 2AB",
+   "property_type": "semi",
+   "age_band": "D",
+   "floor_area": 90,
+   "bedrooms": 3,
+   "wall_type": "cavity_unfilled",
+   "loft": "under_100",
+   "glazing": "double_old",
+   "main_heating": "gas_boiler",
+   "boiler_age": "10_15",
+   "controls": "programmer",
+   "tenure": "own",
+   "epc_band": "D",
+   "outdoor_space": "yes",
+   "current_value_estimate": 250000,
+   "electricity": {
+    "monthly_kwh": [
+     320,
+     290,
+     280,
+     250,
+     230,
+     210,
+     200,
+     205,
+     230,
+     260,
+     300,
+     330
+    ]
+   },
+   "gas": {
+    "monthly_kwh": [
+     2100,
+     1800,
+     1600,
+     1000,
+     600,
+     250,
+     180,
+     190,
+     350,
+     900,
+     1500,
+     2000
+    ]
+   }
+  },
+  "victorian_tierC": {
+   "postcode": "M14 5RT",
+   "property_type": "terraced",
+   "age_band": "A",
+   "floor_area": 85,
+   "bedrooms": 3,
+   "wall_type": "solid",
+   "loft": "under_100",
+   "glazing": "single",
+   "main_heating": "gas_boiler",
+   "boiler_age": "over_15",
+   "tenure": "own",
+   "epc_band": "E"
+  },
+  "flat_rent_bills": {
+   "postcode": "E8 3PL",
+   "property_type": "flat",
+   "age_band": "E",
+   "floor_area": 55,
+   "bedrooms": 2,
+   "flat_position": "top",
+   "main_heating": "electric",
+   "controls": "none",
+   "tenure": "rent",
+   "glazing": "double_old",
+   "electricity": {
+    "monthly_bills_gbp": [
+     160,
+     150,
+     130,
+     100,
+     null,
+     null,
+     60,
+     60,
+     80,
+     110,
+     140,
+     165
+    ]
+   }
+  },
+  "oil_bungalow": {
+   "postcode": "LL55 4AA",
+   "property_type": "bungalow",
+   "age_band": "E",
+   "floor_area": 80,
+   "bedrooms": 2,
+   "wall_type": "cavity_filled",
+   "loft": "100_250",
+   "glazing": "double_old",
+   "main_heating": "oil_boiler",
+   "boiler_age": "over_15",
+   "tenure": "own",
+   "electricity": {
+    "annual_kwh": 2800
+   }
+  },
+  "listed_terrace": {
+   "postcode": "BA1 2QH",
+   "property_type": "terraced",
+   "age_band": "A",
+   "floor_area": 110,
+   "bedrooms": 3,
+   "wall_type": "solid",
+   "loft": "100_250",
+   "glazing": "single",
+   "main_heating": "gas_boiler",
+   "heritage": "listed",
+   "tenure": "own",
+   "electricity": {
+    "annual_kwh": 3200
+   },
+   "gas": {
+    "annual_kwh": 15000
+   }
+  },
+  "missing_info": {
+   "postcode": "LS6 2AB",
+   "property_type": "semi",
+   "tenure": "own"
+  },
+  "conflict_hp_gas": {
+   "postcode": "BS7 8AA",
+   "property_type": "detached",
+   "age_band": "H",
+   "floor_area": 140,
+   "main_heating": "heat_pump",
+   "tenure": "own",
+   "gas": {
+    "annual_kwh": 12000
+   }
+  }
+ },
+ "questions": [
+  {
+   "category": "explain",
+   "profile": "semi_gas_tierA",
+   "question": "Explain my results."
+  },
+  {
+   "category": "explain",
+   "profile": "semi_gas_tierA",
+   "question": "Why is my score so low?"
+  },
+  {
+   "category": "what_if_add",
+   "profile": "semi_gas_tierA",
+   "question": "What if I add a heat pump?"
+  },
+  {
+   "category": "what_if_add",
+   "profile": "semi_gas_tierA",
+   "question": "What if I get solar panels and a battery?"
+  },
+  {
+   "category": "budget",
+   "profile": "semi_gas_tierA",
+   "question": "What can I do with a budget of ₹3,50,000?"
+  },
+  {
+   "category": "goal",
+   "profile": "semi_gas_tierA",
+   "question": "I want to cut my carbon as much as possible."
+  },
+  {
+   "category": "price",
+   "profile": "semi_gas_tierA",
+   "question": "What if gas goes up to ₹11 per kWh?"
+  },
+  {
+   "category": "explain",
+   "profile": "victorian_tierC",
+   "question": "Explain my results."
+  },
+  {
+   "category": "explain",
+   "profile": "victorian_tierC",
+   "question": "Why is my score so low?"
+  },
+  {
+   "category": "what_if_add",
+   "profile": "victorian_tierC",
+   "question": "What if I add a heat pump?"
+  },
+  {
+   "category": "what_if_add",
+   "profile": "victorian_tierC",
+   "question": "What if I get solar panels and a battery?"
+  },
+  {
+   "category": "budget",
+   "profile": "victorian_tierC",
+   "question": "What can I do with a budget of ₹3,50,000?"
+  },
+  {
+   "category": "goal",
+   "profile": "victorian_tierC",
+   "question": "I want to cut my carbon as much as possible."
+  },
+  {
+   "category": "price",
+   "profile": "victorian_tierC",
+   "question": "What if gas goes up to ₹11 per kWh?"
+  },
+  {
+   "category": "explain",
+   "profile": "oil_bungalow",
+   "question": "Explain my results."
+  },
+  {
+   "category": "explain",
+   "profile": "oil_bungalow",
+   "question": "Why is my score so low?"
+  },
+  {
+   "category": "what_if_add",
+   "profile": "oil_bungalow",
+   "question": "What if I add a heat pump?"
+  },
+  {
+   "category": "what_if_add",
+   "profile": "oil_bungalow",
+   "question": "What if I get solar panels and a battery?"
+  },
+  {
+   "category": "budget",
+   "profile": "oil_bungalow",
+   "question": "What can I do with a budget of ₹3,50,000?"
+  },
+  {
+   "category": "goal",
+   "profile": "oil_bungalow",
+   "question": "I want to cut my carbon as much as possible."
+  },
+  {
+   "category": "price",
+   "profile": "oil_bungalow",
+   "question": "What if gas goes up to ₹11 per kWh?"
+  },
+  {
+   "category": "explain",
+   "profile": "listed_terrace",
+   "question": "Explain my results."
+  },
+  {
+   "category": "explain",
+   "profile": "listed_terrace",
+   "question": "Why is my score so low?"
+  },
+  {
+   "category": "what_if_add",
+   "profile": "listed_terrace",
+   "question": "What if I add a heat pump?"
+  },
+  {
+   "category": "what_if_add",
+   "profile": "listed_terrace",
+   "question": "What if I get solar panels and a battery?"
+  },
+  {
+   "category": "budget",
+   "profile": "listed_terrace",
+   "question": "What can I do with a budget of ₹3,50,000?"
+  },
+  {
+   "category": "goal",
+   "profile": "listed_terrace",
+   "question": "I want to cut my carbon as much as possible."
+  },
+  {
+   "category": "price",
+   "profile": "listed_terrace",
+   "question": "What if gas goes up to ₹11 per kWh?"
+  },
+  {
+   "category": "heat_pump_electricity",
+   "profile": "semi_gas_tierA",
+   "question": "Why does my electricity go up with a heat pump?"
+  },
+  {
+   "category": "heat_pump_electricity",
+   "profile": "semi_gas_tierA",
+   "question": "Is a heat pump worth it if electricity costs ₹34 per kWh?"
+  },
+  {
+   "category": "heat_pump_electricity",
+   "profile": "semi_gas_tierA",
+   "question": "What if I add a heat pump without insulating first?"
+  },
+  {
+   "category": "infeasible",
+   "profile": "semi_gas_tierA",
+   "question": "What about solid wall insulation?"
+  },
+  {
+   "category": "infeasible",
+   "profile": "semi_gas_tierA",
+   "question": "Can I add solid wall insulation and floor insulation?"
+  },
+  {
+   "category": "infeasible",
+   "profile": "listed_terrace",
+   "question": "Can I put solar panels on the roof?"
+  },
+  {
+   "category": "infeasible",
+   "profile": "listed_terrace",
+   "question": "What if I replace the windows with double glazing?"
+  },
+  {
+   "category": "infeasible",
+   "profile": "flat_rent_bills",
+   "question": "Can I get a heat pump?"
+  },
+  {
+   "category": "infeasible",
+   "profile": "flat_rent_bills",
+   "question": "What if I install solar panels?"
+  },
+  {
+   "category": "infeasible",
+   "profile": "flat_rent_bills",
+   "question": "What about loft insulation?"
+  },
+  {
+   "category": "tenant",
+   "profile": "flat_rent_bills",
+   "question": "Explain my results."
+  },
+  {
+   "category": "tenant",
+   "profile": "flat_rent_bills",
+   "question": "What can I do as a tenant?"
+  },
+  {
+   "category": "tenant",
+   "profile": "flat_rent_bills",
+   "question": "What if electricity drops to ₹22 per kWh?"
+  },
+  {
+   "category": "reach_c",
+   "profile": "victorian_tierC",
+   "question": "How do I reach band C?"
+  },
+  {
+   "category": "reach_c",
+   "profile": "victorian_tierC",
+   "question": "I want to reach band C without solid wall insulation"
+  },
+  {
+   "category": "reach_c",
+   "profile": "victorian_tierC",
+   "question": "Can I reach band C for ₹9,00,000?"
+  },
+  {
+   "category": "reach_c",
+   "profile": "semi_gas_tierA",
+   "question": "Can I get to an EPC C?"
+  },
+  {
+   "category": "missing_info",
+   "profile": "missing_info",
+   "question": "Explain my results."
+  },
+  {
+   "category": "missing_info",
+   "profile": "missing_info",
+   "question": "What if I add a heat pump?"
+  },
+  {
+   "category": "missing_info",
+   "profile": "missing_info",
+   "question": "How much will I save?"
+  },
+  {
+   "category": "conflict",
+   "profile": "conflict_hp_gas",
+   "question": "Explain my results."
+  },
+  {
+   "category": "conflict",
+   "profile": "conflict_hp_gas",
+   "question": "What if I add solar?"
+  },
+  {
+   "category": "solar_size",
+   "profile": "semi_gas_tierA",
+   "question": "What if I add 3 kWp of solar?"
+  },
+  {
+   "category": "solar_size",
+   "profile": "semi_gas_tierA",
+   "question": "What about a 6 kWp solar system?"
+  },
+  {
+   "category": "grid",
+   "profile": "semi_gas_tierA",
+   "question": "What if the grid is much cleaner by 2035?"
+  },
+  {
+   "category": "remove",
+   "profile": "semi_gas_tierA",
+   "question": "Show me the plan without a heat pump."
+  },
+  {
+   "category": "remove",
+   "profile": "semi_gas_tierA",
+   "question": "What if I skip the smart thermostat?"
+  },
+  {
+   "category": "value",
+   "profile": "semi_gas_tierA",
+   "question": "Will this increase my house value?"
+  },
+  {
+   "category": "oil",
+   "profile": "oil_bungalow",
+   "question": "How much oil will I save with a heat pump?"
+  }
+ ]
+}

@@ -1,0 +1,79 @@
+{
+  "_meta": {
+    "status": "PLACEHOLDER conditional distributions for the sampling chain (region -> type -> age -> area | type -> fabric | age -> heating | age, region). Replace by fitting to EPC open data with gen/sampling.py --fit-epc; do not copy real rows.",
+    "recorded": "2026-10-10"
+  },
+  "region": {"london": 0.13, "south_east": 0.15, "south_west": 0.09, "east": 0.10, "east_midlands": 0.08, "west_midlands": 0.09, "wales": 0.05, "north_west": 0.11, "yorkshire": 0.08, "north_east": 0.04, "scotland": 0.06, "northern_ireland": 0.02},
+  "type_given_region": {
+    "default": {"detached": 0.17, "semi": 0.26, "end_terrace": 0.09, "terraced": 0.19, "flat": 0.20, "bungalow": 0.09},
+    "london": {"detached": 0.06, "semi": 0.18, "end_terrace": 0.07, "terraced": 0.22, "flat": 0.45, "bungalow": 0.02},
+    "scotland": {"detached": 0.20, "semi": 0.20, "end_terrace": 0.08, "terraced": 0.14, "flat": 0.30, "bungalow": 0.08}
+  },
+  "age_given_type": {
+    "default": {"A": 0.10, "B": 0.10, "C": 0.12, "D": 0.13, "E": 0.12, "F": 0.07, "G": 0.08, "H": 0.05, "I": 0.07, "J": 0.06, "K": 0.10},
+    "terraced": {"A": 0.22, "B": 0.20, "C": 0.10, "D": 0.10, "E": 0.10, "F": 0.05, "G": 0.06, "H": 0.03, "I": 0.04, "J": 0.04, "K": 0.06},
+    "flat": {"A": 0.08, "B": 0.06, "C": 0.07, "D": 0.10, "E": 0.14, "F": 0.08, "G": 0.08, "H": 0.05, "I": 0.09, "J": 0.10, "K": 0.15},
+    "bungalow": {"A": 0.02, "B": 0.02, "C": 0.05, "D": 0.18, "E": 0.25, "F": 0.13, "G": 0.12, "H": 0.06, "I": 0.07, "J": 0.04, "K": 0.06}
+  },
+  "area_given_type": {
+    "detached": {"median": 135, "sigma": 0.30},
+    "semi": {"median": 90, "sigma": 0.22},
+    "end_terrace": {"median": 82, "sigma": 0.22},
+    "terraced": {"median": 80, "sigma": 0.24},
+    "flat": {"median": 60, "sigma": 0.28},
+    "bungalow": {"median": 78, "sigma": 0.25}
+  },
+  "wall_given_age": {
+    "A": {"solid": 0.88, "cavity_unfilled": 0.04, "cavity_filled": 0.02, "system_build": 0.01, "solid_insulated": 0.05},
+    "B": {"solid": 0.80, "cavity_unfilled": 0.10, "cavity_filled": 0.05, "system_build": 0.01, "solid_insulated": 0.04},
+    "C": {"solid": 0.20, "cavity_unfilled": 0.30, "cavity_filled": 0.42, "system_build": 0.05, "solid_insulated": 0.03},
+    "D": {"solid": 0.08, "cavity_unfilled": 0.30, "cavity_filled": 0.52, "system_build": 0.08, "solid_insulated": 0.02},
+    "E": {"solid": 0.04, "cavity_unfilled": 0.28, "cavity_filled": 0.58, "system_build": 0.08, "solid_insulated": 0.02},
+    "F": {"solid": 0.03, "cavity_unfilled": 0.25, "cavity_filled": 0.65, "system_build": 0.06, "solid_insulated": 0.01},
+    "G": {"solid": 0.02, "cavity_unfilled": 0.20, "cavity_filled": 0.73, "system_build": 0.04, "solid_insulated": 0.01},
+    "H": {"solid": 0.02, "cavity_unfilled": 0.15, "cavity_filled": 0.80, "system_build": 0.02, "solid_insulated": 0.01},
+    "I": {"solid": 0.01, "cavity_unfilled": 0.10, "cavity_filled": 0.86, "system_build": 0.02, "solid_insulated": 0.01},
+    "J": {"solid": 0.01, "cavity_unfilled": 0.05, "cavity_filled": 0.92, "system_build": 0.01, "solid_insulated": 0.01},
+    "K": {"solid": 0.01, "cavity_unfilled": 0.02, "cavity_filled": 0.95, "system_build": 0.01, "solid_insulated": 0.01}
+  },
+  "loft_given_age": {
+    "old": {"none": 0.05, "under_100": 0.22, "100_250": 0.50, "over_250": 0.23},
+    "mid": {"none": 0.03, "under_100": 0.15, "100_250": 0.52, "over_250": 0.30},
+    "new": {"none": 0.01, "under_100": 0.04, "100_250": 0.35, "over_250": 0.60}
+  },
+  "age_group": {"A": "old", "B": "old", "C": "old", "D": "old", "E": "mid", "F": "mid", "G": "mid", "H": "mid", "I": "new", "J": "new", "K": "new"},
+  "glazing_given_age": {
+    "old": {"single": 0.08, "double_old": 0.40, "double_modern": 0.40, "triple": 0.01, "mixed": 0.11},
+    "mid": {"single": 0.04, "double_old": 0.42, "double_modern": 0.46, "triple": 0.01, "mixed": 0.07},
+    "new": {"single": 0.01, "double_old": 0.35, "double_modern": 0.60, "triple": 0.03, "mixed": 0.01}
+  },
+  "floor_given_age": {
+    "old": {"solid": 0.40, "suspended": 0.55, "insulated": 0.05},
+    "mid": {"solid": 0.75, "suspended": 0.15, "insulated": 0.10},
+    "new": {"solid": 0.35, "suspended": 0.05, "insulated": 0.60}
+  },
+  "flat_roof_share": {"detached": 0.02, "semi": 0.02, "end_terrace": 0.03, "terraced": 0.04, "flat": 0.35, "bungalow": 0.03},
+  "heating_given_region": {
+    "default": {"gas_boiler": 0.85, "oil_boiler": 0.03, "lpg_boiler": 0.01, "electric": 0.07, "heat_pump": 0.02, "other": 0.02},
+    "london": {"gas_boiler": 0.86, "oil_boiler": 0.0, "lpg_boiler": 0.0, "electric": 0.12, "heat_pump": 0.01, "other": 0.01},
+    "scotland": {"gas_boiler": 0.76, "oil_boiler": 0.07, "lpg_boiler": 0.02, "electric": 0.11, "heat_pump": 0.02, "other": 0.02},
+    "wales": {"gas_boiler": 0.76, "oil_boiler": 0.10, "lpg_boiler": 0.03, "electric": 0.06, "heat_pump": 0.02, "other": 0.03},
+    "south_west": {"gas_boiler": 0.75, "oil_boiler": 0.09, "lpg_boiler": 0.03, "electric": 0.08, "heat_pump": 0.03, "other": 0.02},
+    "northern_ireland": {"gas_boiler": 0.28, "oil_boiler": 0.62, "lpg_boiler": 0.01, "electric": 0.04, "heat_pump": 0.02, "other": 0.03}
+  },
+  "flat_electric_heating_boost": 0.12,
+  "new_build_heat_pump_boost": 0.06,
+  "boiler_age": {"under_5": 0.25, "5_10": 0.30, "10_15": 0.25, "over_15": 0.20},
+  "controls": {"none": 0.10, "programmer": 0.55, "smart_thermostat": 0.25, "smart_trvs": 0.10},
+  "solar_probability": 0.06,
+  "solar_kwp": {"median": 3.5, "sigma": 0.25},
+  "battery_given_solar": 0.2,
+  "orientation": {"S": 0.3, "SE_SW": 0.3, "E_W": 0.3, "N": 0.1},
+  "shading": {"none": 0.6, "some": 0.3, "heavy": 0.1},
+  "outdoor_space_by_type": {"detached": 0.99, "semi": 0.97, "end_terrace": 0.95, "terraced": 0.88, "flat": 0.25, "bungalow": 0.98},
+  "heritage": {"no": 0.88, "conservation": 0.09, "listed": 0.03},
+  "tenure": {"own": 0.68, "rent": 0.32},
+  "draught_proofed": {"old": 0.35, "mid": 0.55, "new": 0.85},
+  "hidden": {"behaviour_sigma": 0.22, "build_quality_sigma": 0.10, "appliance_sigma": 0.25},
+  "observation": {"noise_sigma": 0.08, "missing_share": 0.25, "max_missing_months": 4, "spike_probability": 0.01, "not_sure_rate": 0.08, "epc_known_rate": 0.6}
+}

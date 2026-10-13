@@ -1,0 +1,19 @@
+# Light and dark themes. The app follows the device setting by default; viewers can switch
+# with the ⋮ menu (top right) → Settings → Theme.
+[theme]
+font = "sans serif"
+
+[theme.light]
+primaryColor = "#1a7f5a"
+backgroundColor = "#fbfbf9"
+secondaryBackgroundColor = "#f0f3ef"
+textColor = "#1d1d1b"
+
+[theme.dark]
+primaryColor = "#3fbf8a"
+backgroundColor = "#111614"
+secondaryBackgroundColor = "#1b2320"
+textColor = "#e8ece9"
+
+[client]
+toolbarMode = "viewer"

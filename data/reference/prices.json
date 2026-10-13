@@ -1,0 +1,21 @@
+{
+  "_meta": {
+    "status": "PLACEHOLDER. Customer prices: replace with the current Ofgem price cap unit rates (GB average, direct debit) and record the cap period. Rating prices: SAP fixed fuel prices + deflator; values here follow the SAP 2012 / ECO4 scoring methodology as recalled (verify for SAP 10.2 / RdSAP 10).",
+    "recorded": "2026-10-10"
+  },
+  "customer": {
+    "period": "placeholder (verify Ofgem cap period)",
+    "unit_rate_gbp_per_kwh": {"electricity": 0.2635, "gas": 0.0629, "oil": 0.0700, "lpg": 0.0950, "solid": 0.0600},
+    "standing_charge_gbp_per_year": {"electricity": 196.0, "gas": 120.0},
+    "export_gbp_per_kwh": 0.15,
+    "include_export_income": true
+  },
+  "rating_basis": {
+    "deflator": 0.42,
+    "unit_rate_gbp_per_kwh": {"electricity": 0.1319, "gas": 0.0348, "oil": 0.0544, "lpg": 0.0760, "solid": 0.0367},
+    "standing_charge_gbp_per_year": {"electricity": 54.0, "gas": 120.0},
+    "pv_credit_gbp_per_kwh": 0.1319,
+    "ecf_kink": 3.5,
+    "band_edges": {"A": 92, "B": 81, "C": 69, "D": 55, "E": 39, "F": 21, "G": 1}
+  }
+}

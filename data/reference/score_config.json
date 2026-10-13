@@ -1,0 +1,27 @@
+{
+  "_meta": {
+    "status": "Documented design choices. Anchors tuned so the brief's example home (E, high use, no solar, poor insulation, gas boiler, single glazing) scores about 38.",
+    "recorded": "2026-10-10"
+  },
+  "weights": {"efficiency": 0.25, "intensity": 0.20, "insulation": 0.15, "heating": 0.15, "glazing": 0.10, "renewable": 0.10, "smart": 0.05},
+  "efficiency_band_score": {"A": 100, "B": 85, "C": 70, "D": 55, "E": 40, "F": 25, "G": 10},
+  "efficiency_sap_anchors": {"x": [1, 21, 39, 55, 69, 81, 92, 100], "y": [10, 25, 40, 55, 70, 85, 100, 100]},
+  "intensity_anchors": {"x": [50, 100, 150, 250, 350, 450], "y": [100, 80, 60, 30, 10, 0]},
+  "insulation_weights": {"roof": 0.4, "wall": 0.4, "floor": 0.2},
+  "roof_score": {"none": 0, "under_100": 35, "100_250": 70, "over_250": 100, "flat_roof_uninsulated": 10, "flat_roof_insulated": 80},
+  "wall_score": {"solid": 10, "cavity_unfilled": 35, "system_build": 25, "cavity_filled": 80, "solid_insulated": 100, "system_insulated": 90},
+  "floor_score": {"solid": 40, "suspended": 30, "insulated": 100},
+  "heating_score": {
+    "heat_pump": 100,
+    "gas_boiler": {"under_5": 65, "5_10": 65, "10_15": 55, "over_15": 45},
+    "lpg_boiler": {"under_5": 55, "5_10": 55, "10_15": 47, "over_15": 40},
+    "oil_boiler": {"under_5": 50, "5_10": 50, "10_15": 43, "over_15": 35},
+    "electric": 30,
+    "other": 15
+  },
+  "glazing_score": {"triple": 100, "double_modern": 80, "double_old": 55, "mixed": 40, "secondary": 35, "single": 20},
+  "renewable_anchors": {"x": [0.0, 0.5], "y": [0, 100]},
+  "smart_score": {"none": 0, "programmer": 30, "smart_thermostat": 60, "smart_trvs": 80, "tariff_aware": 100},
+  "classes": [[80, "Highly efficient"], [65, "Good"], [50, "Moderate"], [30, "Poor"], [0, "Very poor"]],
+  "suitability": {"w_saving": 0.5, "w_readiness": 0.3, "w_value": 0.2, "high": 0.66, "medium": 0.33}
+}

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Home Engine - System Architecture</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #ffffff;
+      color: #0f172a;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      padding: 30px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .header-bar {
+      width: 100%;
+      max-width: 1400px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 12px 20px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .header-bar h1 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #1e293b;
+    }
+    .header-bar .subtitle {
+      font-size: 13px;
+      color: #64748b;
+    }
+    .actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .btn {
+      background: #0284c7;
+      color: #ffffff;
+      border: none;
+      padding: 7px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+    .btn:hover {
+      background: #0369a1;
+    }
+    .btn-secondary {
+      background: #ffffff;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+    }
+    .btn-secondary:hover {
+      background: #f1f5f9;
+    }
+    #canvas-card {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 24px 20px;
+      width: 100%;
+      max-width: 1440px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      overflow-x: auto;
+      display: flex;
+      justify-content: center;
+    }
+    .mermaid {
+      background: #ffffff !important;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+    .mermaid svg {
+      max-width: 100%;
+      height: auto;
+    }
+    @media print {
+      .header-bar {
+        display: none !important;
+      }
+      body {
+        padding: 0;
+      }
+      #canvas-card {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+      }
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: 'base',
+      themeVariables: {
+        darkMode: false,
+        background: '#ffffff',
+        mainBkg: '#ffffff',
+        primaryColor: '#f0f9ff',
+        primaryBorderColor: '#0284c7',
+        primaryTextColor: '#0f172a',
+        lineColor: '#475569',
+        secondaryColor: '#f8fafc',
+        tertiaryColor: '#ffffff',
+        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+        fontSize: '13px',
+        clusterBkg: '#f8fafc',
+        clusterBorder: '#cbd5e1'
+      },
+      flowchart: {
+        curve: 'basis',
+        nodeSpacing: 35,
+        rankSpacing: 45,
+        htmlLabels: true
+      }
+    });
+
+    function downloadSVG() {
+      const svg = document.querySelector('.mermaid svg');
+      if (!svg) return;
+      const serializer = new XMLSerializer();
+      let source = serializer.serializeToString(svg);
+      source = '<?xml version="1.0" standalone="no"?>\r\n' + source;
+      const url = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(source);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "green_home_architecture.svg";
+      link.click();
+    }
+
+    function downloadPNG() {
+      const svg = document.querySelector('.mermaid svg');
+      if (!svg) return;
+      const serializer = new XMLSerializer();
+      const svgString = serializer.serializeToString(svg);
+      const svgBlob = new Blob([svgString], { type: "image/svg+xml;charset=utf-8" });
+      const URLObj = window.URL || window.webkitURL || window;
+      const blobURL = URLObj.createObjectURL(svgBlob);
+      
+      const image = new Image();
+      image.onload = function() {
+        const bbox = svg.getBoundingClientRect();
+        const canvas = document.createElement("canvas");
+        const scale = 2; // high-res
+        canvas.width = (bbox.width || 1200) * scale;
+        canvas.height = (bbox.height || 600) * scale;
+        const ctx = canvas.getContext("2d");
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.scale(scale, scale);
+        ctx.drawImage(image, 0, 0);
+        
+        const pngURL = canvas.toDataURL("image/png");
+        const link = document.createElement("a");
+        link.href = pngURL;
+        link.download = "green_home_architecture.png";
+        link.click();
+        URLObj.revokeObjectURL(blobURL);
+      };
+      image.src = blobURL;
+    }
+
+    function hideToolbarForScreenshot() {
+      document.querySelector('.header-bar').style.display = 'none';
+      document.body.style.padding = '10px';
+      document.getElementById('canvas-card').style.border = 'none';
+      document.getElementById('canvas-card').style.boxShadow = 'none';
+    }
+  </script>
+</head>
+<body>
+
+  <div class="header-bar">
+    <div>
+      <h1>Green Home Engine — Architecture Diagram</h1>
+      <span class="subtitle">Wide landscape layout (optimized for 3-page final report &amp; screenshots)</span>
+    </div>
+    <div class="actions">
+      <button class="btn btn-secondary" onclick="hideToolbarForScreenshot()" title="Hides toolbar so you can capture cleanly with any snipping tool">Hide UI for Snipping</button>
+      <button class="btn btn-secondary" onclick="downloadSVG()">Download SVG</button>
+      <button class="btn" onclick="downloadPNG()">Download High-Res PNG</button>
+    </div>
+  </div>
+
+  <div id="canvas-card">
+    <div class="mermaid">
+%%{init: {'theme': 'base', 'themeVariables': {'darkMode': false, 'background': '#ffffff', 'mainBkg': '#ffffff', 'primaryColor': '#f0f9ff', 'primaryBorderColor': '#0284c7', 'primaryTextColor': '#0f172a', 'lineColor': '#475569', 'clusterBkg': '#f8fafc', 'clusterBorder': '#cbd5e1'}}}%%
+flowchart LR
+
+    subgraph C1["1. Intake & Validation"]
+        direction TB
+        F["<b>Customer Form</b><br/><code>engine/inputs.py</code>"]
+        V{"<b>Validation & Tiering</b><br/>Tier A / B / C<br/><code>engine/validation.py</code>"}
+        Q["<b>Abstain & Clarify</b><br/>Targeted question"]
+        U["<b>Chat Query</b><br/>Natural language"]
+        PAR["<b>Scenario Parser</b><br/>JSON mode / rule fallback<br/><code>llm/parser.py</code>"]
+    end
+
+    subgraph C2["2. Baseline & Surrogates"]
+        direction TB
+        S["<b>State Builder</b><br/>Prior defaults recorded<br/><code>engine/state_builder.py</code>"]
+        B["<b>Physics Baseline</b><br/>Annualise, degree-days,<br/>calibrate &kappa; / &alpha;<br/><code>engine/baseline.py</code>"]
+        ML["<b>Tier C Surrogate</b><br/>LightGBM + CQR range<br/><code>ml/runtime.py</code>"]
+    end
+
+    subgraph C3["3. Combinatorial Planner"]
+        direction TB
+        FE["<b>Feasibility Rules</b><br/>Structural prerequisites &<br/>HP readiness (HLP &le; 2.0)<br/><code>engine/feasibility.py</code>"]
+        P1["<b>Stage 1: Combinatorial Sim</b><br/>Simulate 2^k valid subsets,<br/>cache joint kWh, cost, rating<br/><code>engine/planner.py</code>"]
+        P2["<b>Stage 2: Real-time Re-Rank</b><br/>Budget, goals, disruption,<br/>tariffs & sliders (&lt;250ms)"]
+    end
+
+    subgraph C4["4. Impact & Evaluation"]
+        direction TB
+        SC["<b>Green Home Score</b><br/>Deterministic S = &Sigma; w_k s_k<br/><code>engine/score.py</code>"]
+        C["<b>Bills & Carbon</b><br/>Fuel tariffs & grid factors<br/><code>engine/carbon.py</code>"]
+        VAL["<b>Property Value Uplift</b><br/>Hedonic regression<br/><code>engine/value.py</code>"]
+        MC["<b>Monte Carlo P10-P90</b><br/>Uncertainty distribution<br/><code>engine/uncertainty.py</code>"]
+        R[("<b>Results JSON</b><br/>Single source of truth")]
+    end
+
+    subgraph C5["5. Grounded LLM & Delivery"]
+        direction TB
+        FACTS["<b>Fact Sheet</b><br/>Dimensionless summaries<br/><code>llm/facts.py</code>"]
+        LLM["<b>LLM Explainer</b><br/>Gemini / Groq / Ollama<br/><code>llm/explainer.py</code>"]
+        VER{"<b>Number Verifier</b><br/>Regex exact match<br/><code>llm/verifier.py</code>"}
+        T["<b>Template Failover</b><br/>Zero hallucination<br/><code>llm/templates.py</code>"]
+        D["<b>Dashboard & API</b><br/>Streamlit / FastAPI<br/><code>app/</code> &amp; <code>api/</code>"]
+    end
+
+    %% Stage 1 connections
+    F --> V
+    V -->|Abstain| Q
+    V -->|Valid| S
+    U --> PAR
+    PAR -->|Scenario JSON| P2
+
+    %% Stage 2 connections
+    S --> B
+    B -->|Tier C| ML
+    S --> FE
+
+    %% Stage 3 connections
+    B --> P1
+    FE --> P1
+    P1 --> P2
+
+    %% Stage 4 connections
+    P1 --> SC
+    P2 --> C
+    P2 --> VAL
+    P2 --> MC
+
+    SC --> R
+    C --> R
+    VAL --> R
+    MC --> R
+
+    %% Stage 5 connections
+    R --> FACTS
+    FACTS --> LLM
+    LLM --> VER
+    VER -->|Pass| D
+    VER -->|Fail &times; 2| T --> D
+
+    %% Custom node accents
+    classDef inputNode fill:#f0fdf4,stroke:#16a34a,stroke-width:1.5px,color:#14532d;
+    classDef engineNode fill:#f0f9ff,stroke:#0284c7,stroke-width:1.5px,color:#0c4a6e;
+    classDef resultNode fill:#fefce8,stroke:#ca8a04,stroke-width:1.5px,color:#713f12;
+    classDef llmNode fill:#fdf4ff,stroke:#c026d3,stroke-width:1.5px,color:#701a75;
+    classDef gateNode fill:#fff1f2,stroke:#e11d48,stroke-width:1.5px,color:#881337;
+
+    class F,U inputNode;
+    class S,B,ML,FE,P1,P2 engineNode;
+    class SC,C,VAL,MC,R resultNode;
+    class FACTS,LLM,T,D llmNode;
+    class V,VER gateNode;
+    </div>
+  </div>
+
+</body>
+</html>

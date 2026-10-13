@@ -1,0 +1,336 @@
+id,category,profile,question,parsed_by,scenario,answer_source,model,verifier_ok,unsupported,llm_errors,answer,MANUAL_grounded (Y/N),MANUAL_factually_accurate (Y/N),MANUAL_unsupported_claims (count),AUDIT_note
+0,explain,semi_gas_tierA,Explain my results.,gemini,"{""question_type"": ""explain_result""}",gemini,gemini-flash-lite-latest,True,,,"Your semi-detached home in Yorkshire and the Humber currently has a Green Home Score of 45, putting it in the Poor class. Key issues include a low EPC-style rating, little or no renewable generation, and poorly insulated loft or roof space. 
+
+Your recommended plan features cavity wall insulation. This will save 2597 kWh of gas and 475 kg of carbon per year, with an estimated mid-cost of 1200 GBP. Your electricity use will not rise. 
+
+Solid wall insulation is not suitable because your walls are cavity walls, so cavity fill is the right measure. 
+
+Optional extras include a loft insulation top-up to 270 mm, suspended floor insulation, and draught-proofing. 
+
+Savings, costs and values are estimates, not guarantees. A qualified assessor should confirm before any work. To help refine your results, please let us know your property's specific budget and your preferred timeline for carrying out these improvements.",N,Y,1,"Figures correct; asks for budget and timeline, which the engine did not request."
+1,explain,semi_gas_tierA,Why is my score so low?,gemini,"{""question_type"": ""explain_result""}",gemini,gemini-flash-lite-latest,True,,,"Your current green home score is 45, which is classed as poor, and your EPC-style band now is D. 
+
+There are a few reasons for this rating. The key issues are that your EPC-style rating is low, there is little or no renewable generation, and your loft or roof is poorly insulated. 
+
+Please note that savings, costs and values are estimates, not guarantees. 
+
+To help me give you more tailored advice, could you please tell me your current loft insulation depth, and whether you have any plans to install renewable generation like solar panels?",N,Y,1,"Score, band and issues correct; asks for loft depth and solar plans, which were already given or not needed."
+2,what_if_add,semi_gas_tierA,What if I add a heat pump?,gemini,"{""question_type"": ""what_if"", ""retrofits_add"": [""heat_pump""]}",gemini,gemini-flash-lite-latest,True,,,"Adding an air source heat pump is part of your recommended plan. 
+
+Electricity use goes up because heating moves from gas or another fuel to electricity; total purchased energy and carbon still fall. Specifically, electricity use rises by -1013 kWh per year, whilst gas savings reach 12220 kWh per year and carbon savings are 2025 kg per year (2.0 tonnes per year). The heat pump SCOP is 3.0. 
+
+Please note that savings are estimates, not guarantees.",Y,N,0,"Says electricity 'rises by -1013 kWh': sign error (it rises by 1,013)."
+3,what_if_add,semi_gas_tierA,What if I get solar panels and a battery?,gemini,"{""question_type"": ""what_if"", ""retrofits_add"": [""solar_pv"", ""battery""]}",gemini,gemini-flash-lite-latest,True,,,"Your recommended plan includes both solar PV panels and a 5 kWh usable home battery. These are part of a package alongside cavity wall insulation, draught-proofing, and a smart thermostat with smart TRVs / zoning. 
+
+Please note that savings are estimates, not guarantees. 
+
+For the whole recommended plan, the estimated mid cost is £12800, with a cost range of £9330 to £16760. It is projected to save £899 per year on your bills, cut carbon by 1107 kg per year (or 1.1 tonnes per year), and achieve a payback period of 14.2 years. Your EPC-style band would improve from D to B, and your green home score would rise from 45 (Poor) to 71 (Good). Electricity use does not rise for this plan. 
+
+If you also want to consider solid wall insulation, it is not suitable because your walls are cavity walls: cavity fill is the right measure.",Y,Y,0,All figures match the facts.
+4,budget,semi_gas_tierA,"What can I do with a budget of £3,000?",gemini,"{""question_type"": ""what_if"", ""budget"": 3000.0}",gemini,gemini-flash-lite-latest,True,,,"With your budget of £3000.0, we recommend cavity wall insulation, which has a mid cost of £1200 (with a cost range between £780 and £1710). This will save 2597 kWh of gas per year, reduce your carbon by 475 kg per year (or 0.5 tonnes per year), and save £163 per year on your bills. The payback period is 7.3 years. 
+
+You could also consider optional extras such as a loft insulation top-up to 270 mm (mid cost £790, saving an extra £47), suspended floor insulation (mid cost £2200, saving an extra £43), or draught-proofing (mid cost £250, saving an extra £20). 
+
+Solid wall insulation (external or internal) is not suitable because your walls are cavity walls: cavity fill is the right measure. 
+
+Savings, costs and values are estimates, not guarantees.",Y,Y,0,All figures match the facts.
+5,goal,semi_gas_tierA,I want to cut my carbon as much as possible.,gemini,"{""goal"": ""cut_carbon""}",gemini,gemini-flash-lite-latest,True,,,"To cut your carbon as much as possible, your 1950-1966 semi-detached home in Yorkshire and the Humber can go from band D to band A. 
+
+Solid wall insulation is not suitable because your walls are cavity walls, so cavity fill is the right measure. 
+
+Your recommended plan includes loft insulation top-up to 270 mm, cavity wall insulation, suspended floor insulation, double glazing (modern A-rated), draught-proofing, an air source heat pump (space heating and hot water), solar PV panels, a home battery (5 kWh usable), and a smart thermostat with smart TRVs / zoning. 
+
+This full package cuts your carbon by 2345 kg per year (or 2.3 tonnes per year), saving 12220 kWh of gas and 531 kWh of electricity yearly. Your mid-point cost is 35700 GBP (with a range of 25740 to 47680 GBP), saving 982 GBP per year on bills with a 36.4 year payback. 
+
+Savings, costs and values are estimates, not guarantees.",Y,Y,0,All figures match the facts.
+6,price,semi_gas_tierA,What if gas goes up to 10p per kWh?,gemini,"{""question_type"": ""what_if"", ""gas_price"": 0.1}",gemini,gemini-flash-lite-latest,True,,,"I cannot estimate the impact of gas going up to 10p per kWh because that specific price change is not included in your assessment data. 
+
+For your current baseline, your home uses 12470 kWh of gas per year and 3105 kWh of electricity per year, with a total bill of 2065 GBP per year. 
+
+If you proceed with the recommended cavity wall insulation, it costs a mid-price of 1200 GBP (ranging from 780 to 1710 GBP) and saves 2597 kWh of gas per year, giving an estimated bill saving of 260 GBP per year and a carbon saving of 475 kg per year. 
+
+Savings are estimates, not guarantees. 
+
+To help me give you more details, please let me know: What is your target budget for retrofits? Also, do you have any specific concerns about your loft or roof insulation, or your current heating system?",N,N,2,"Claims the 10p gas price cannot be estimated, but the facts already reflect it (bill saving 163 to 260); adds unrequested questions."
+7,explain,victorian_tierC,Explain my results.,gemini,"{""question_type"": ""explain_result""}",gemini,gemini-flash-lite-latest,True,,,"Your pre-1900 terraced home in the North West has a green home score of 30, putting it in the Poor class with an EPC-style band of E. Key issues are that your EPC-style rating is low, energy use per square metre is high, and your walls are uninsulated. 
+
+Cavity wall insulation is not suitable because your walls have no cavity to fill. 
+
+Your recommended plan is a smart thermostat with smart TRVs / zoning. This is estimated to cost a mid-point of £450 (with a range of £250 to £800). It will save 1541 kWh of gas per year, reduce your carbon by 282 kg per year (0.3 tonnes), and save £97 per year on your bills, paying back in 4.6 years. Your electricity use does not rise. 
+
+Savings are estimates, not guarantees. 
+
+Optional extras include double glazing, loft insulation top-up, and draught-proofing. 
+
+To give you a more accurate assessment, we need your usage data; currently, this is a provisional estimate with no usage data.",Y,Y,0,Correct; the request for usage data is justified by Tier C.
+8,explain,victorian_tierC,Why is my score so low?,gemini,"{""question_type"": ""explain_result""}",gemini,gemini-flash-lite-latest,True,,,"Your current Green Home Score is 30, which is classed as Poor, and your EPC-style band now is E. 
+
+The key issues causing this low score are that your EPC-style rating is low, your energy use per square metre is high, and your walls are uninsulated. Furthermore, cavity wall insulation is not suitable because your walls have no cavity to fill. 
+
+Please note that savings, costs and values are estimates, not guarantees.",Y,Y,0,Correct.
+9,what_if_add,victorian_tierC,What if I add a heat pump?,gemini,"{""question_type"": ""what_if"", ""retrofits_add"": [""heat_pump""]}",gemini,gemini-flash-lite-latest,True,,,"Adding an air source heat pump for space heating and hot water is recommended in your plan. Savings are estimates, not guarantees. 
+
+With this full recommended plan, your electricity use goes up by -1711 kWh per year because heating moves from gas or another fuel to electricity; total purchased energy and carbon still fall. Specifically, gas savings are 19013 kWh per year, and carbon savings are 3123 kg per year (or 3.1 tonnes per year). The heat pump operates with a seasonal coefficient of performance (SCOP) of 2.9. 
+
+The total estimated cost for the recommended plan is 26450 GBP (with a range of 18800 to 35280 GBP), and the estimated bill saving is 997 GBP per year. Your EPC-style band would improve from E to C. A qualified assessor should confirm before any work.",Y,N,0,Says electricity 'goes up by -1711 kWh': sign error.
+10,what_if_add,victorian_tierC,What if I get solar panels and a battery?,gemini,"{""question_type"": ""what_if"", ""retrofits_add"": [""solar_pv"", ""battery""]}",gemini,gemini-flash-lite-latest,True,,,"Your recommended plan includes both solar PV panels and a 5 kWh usable home battery alongside other measures. These are part of a package projected to cost a mid-point of 12080 GBP, with a cost range between 8820 GBP and 15740 GBP. 
+
+By carrying out this plan, you could save 1993 kWh of electricity per year and 3059 kWh of gas per year. This brings an estimated bill saving of 819 GBP per year and a carbon saving of 972 kg per year (1.0 tonnes per year). Electricity does not rise for this plan. The payback period is estimated at 14.7 years, and your EPC-style band would improve from E to D. 
+
+Please note these figures are estimates, not guarantees.",Y,Y,0,All figures match the facts.
+11,budget,victorian_tierC,"What can I do with a budget of £3,000?",gemini,"{""budget"": 3000.0}",gemini,gemini-flash-lite-latest,True,,,"With your budget of £3,000.0, you can install a smart thermostat with smart TRVs / zoning. This costs a mid-price of £450 (within a range of £250 to £800). It will save 1,541 kWh of gas per year, reducing your carbon by 282 kg per year (or 0.3 tonnes per year). 
+
+With your remaining budget, you could also add a loft insulation top-up to 270 mm at a mid-cost of £760, and draught-proofing at a mid-cost of £250. Cavity wall insulation is not suitable because walls have no cavity to fill. 
+
+Savings are estimates, not guarantees.",N,Y,1,"Infers that loft and draught-proofing fit the remaining budget: its own arithmetic, not in the facts."
+12,goal,victorian_tierC,I want to cut my carbon as much as possible.,gemini,"{""goal"": ""cut_carbon""}",gemini,gemini-flash-lite-latest,True,,,"Your pre-1900 terraced home in the North West currently has an E energy band and a Green Home Score of 30, with uninsulated walls. 
+
+To cut your carbon as much as possible, your recommended plan includes loft insulation top-up to 270 mm, solid wall insulation, suspended floor insulation, modern A-rated double glazing, draught-proofing, an air source heat pump, solar PV panels, a 5 kWh usable home battery, and a smart thermostat with smart TRVs and zoning. 
+
+Cavity wall insulation is not suitable because your walls have no cavity to fill. 
+
+By following this plan, you could save 3537 kg (or 3.5 tonnes) of carbon per year and reduce your gas use by 19013 kWh. Savings are estimates, not guarantees. The total cost mid-point is 40770 GBP, and your EPC band could rise to B.",Y,Y,0,Correct.
+13,price,victorian_tierC,What if gas goes up to 10p per kWh?,gemini,"{""question_type"": ""what_if"", ""gas_price"": 0.1}",gemini,gemini-flash-lite-latest,True,,,"Regarding your question about gas going up to 10p per kWh, that specific price change cannot be estimated from the available facts. 
+
+For your pre-1900 terraced home in the North West, your baseline energy use is 2711 kWh of electricity and 19263 kWh of gas per year, resulting in a total bill of 2641 GBP per year and carbon emissions of 4085 kg per year (4.1 tonnes per year). 
+
+Savings, costs and values are estimates, not guarantees. 
+
+Our recommended plan is a smart thermostat with smart TRVs / zoning. This costs a mid-price of 450 GBP (with a range of 250 to 800 GBP) and saves 1541 kWh of gas per year. This cuts your bills by 154 GBP per year and carbon by 282 kg per year (0.3 tonnes per year), with a payback period of 2.9 years. Electricity does not rise. 
+
+Cavity wall insulation is not suitable because your walls have no cavity to fill.",N,N,1,Claims the gas price change cannot be estimated; facts show it (bill saving 97 to 154).
+14,explain,oil_bungalow,Explain my results.,gemini,"{""question_type"": ""explain_result""}",gemini,gemini-flash-lite-latest,True,,,"Your 1967-1975 bungalow in Wales has a current Green Home Score of 43, putting it in band E. Key issues include a low EPC-style rating and high energy use per square metre. 
+
+Cavity wall insulation and solid wall insulation are not suitable because walls are already insulated. Suspended floor insulation is not suitable because it is a solid floor, so insulating it needs the floor dug up. An air source heat pump is not suitable because heat loss is too high for it to run efficiently. 
+
+Your recommended plan is a smart thermostat with smart TRVs / zoning. This costs a mid-price of £450 (with a range of £250 to £800) and saves 1042 kWh of oil per year, giving a bill saving of £73 per year and saving 257 kg (0.3 tonnes) of carbon per year. Payback takes 6.2 years, and your score rises to 48. Savings are estimates, not guarantees.",N,N,1,Says a score of 43 'puts it in band E': score and EPC band are separate measures.
+15,explain,oil_bungalow,Why is my score so low?,gemini,"{""question_type"": ""explain_result""}",gemini,gemini-flash-lite-latest,True,,,"Your green home score is currently 43, which puts your property in the Poor class (provisional), and your EPC-style band now is E. 
+
+The key issues pulling your score down are that your EPC-style rating is low, you have high energy use per m2, and you have no or little renewable generation. 
+
+Regarding your walls, cavity wall insulation and solid wall insulation are not suitable because the walls are already insulated. Suspended floor insulation is not suitable because it is a solid floor: insulating it needs the floor dug up, so it is not offered. Furthermore, an air source heat pump is not suitable because your heat loss is too high for a heat pump to run efficiently (HLP 2.67 W/m2K, and 2.17 even with every feasible fabric measure; readiness threshold 2.0). 
+
+Please note that savings are estimates, not guarantees.",Y,Y,0,"Correct, incl. heat pump reason."
+16,what_if_add,oil_bungalow,What if I add a heat pump?,gemini,"{""question_type"": ""what_if"", ""retrofits_add"": [""heat_pump""]}",gemini,gemini-flash-lite-latest,True,,,"An air source heat pump (space heating and hot water) is not suitable for your home. The reason given is that heat loss is too high for a heat pump to run efficiently (HLP 2.67 W/m2K, and 2.17 even with every feasible fabric measure; readiness threshold 2.0). 
+
+Because it is not suitable, savings cannot be estimated for it. 
+
+Please note that savings, costs and values are estimates, not guarantees. A qualified assessor should confirm before any work.",Y,Y,0,Infeasible heat pump explained without savings.
+17,what_if_add,oil_bungalow,What if I get solar panels and a battery?,gemini,"{""question_type"": ""what_if"", ""retrofits_add"": [""solar_pv"", ""battery""]}",gemini,gemini-flash-lite-latest,True,,,"Getting solar PV panels and a home battery is included in your recommended plan alongside draught-proofing and a smart thermostat. 
+
+For the whole recommended plan, the estimated bill saving is 792 GBP per year, with a carbon saving of 785 kg per year (or 0.8 tonnes per year). The electricity saving is 2121 kWh per year and the oil saving is 1402 kWh per year. The gas saving is 0 kWh per year. Electricity use does not rise. 
+
+The mid cost for the recommended plan is 11600 GBP, with a cost range of 8550 to 15050 GBP. The payback period is 14.7 years. 
+
+Please note that savings are estimates, not guarantees.",Y,Y,0,"All figures match the facts, incl. oil saving."
+18,budget,oil_bungalow,"What can I do with a budget of £3,000?",gemini,"{""budget"": 3000.0}",gemini,gemini-flash-lite-latest,True,,,"With your budget of £3,000.0, your recommended plan is a smart thermostat with smart TRVs / zoning. This costs an estimated mid cost of £450, with a cost range of £250 to £800. It is expected to save £73 a year on bills and reduce carbon by 257 kg per year (0.3 tonnes). 
+
+You can also add optional extras. A loft insulation top-up to 270 mm costs a mid cost of £1,210 and gives an extra bill saving of £40. Draught-proofing costs a mid cost of £250 and gives an extra bill saving of £25. Double glazing (modern A-rated) costs a mid cost of £7,920 and gives an extra bill saving of £66.
+
+Some measures are not suitable. Cavity wall insulation and solid wall insulation (external or internal) are not suitable because walls are already insulated. Suspended floor insulation is not suitable because it is a solid floor and insulating it needs the floor dug up, so it is not offered. An air source heat pump (space heating and hot water) is not suitable because heat loss is too high for a heat pump to run efficiently (HLP 2.67 W/m2K, and 2.17 even with every feasible fabric measure; readiness threshold 2.0). 
+
+Savings are estimates, not guarantees.",Y,Y,0,Correct; extras and unsuitable items as in the facts.
+19,goal,oil_bungalow,I want to cut my carbon as much as possible.,gemini,"{""goal"": ""cut_carbon""}",gemini,gemini-flash-lite-latest,True,,,"Your 1967-1975 bungalow in Wales has a current Green Home Score of 43, putting it in band E. Cavity wall insulation, solid wall insulation, and suspended floor insulation are not suitable because your walls are already insulated, and your floor is solid so insulating it needs the floor dug up. An air source heat pump is also not suitable because your heat loss is too high for it to run efficiently (HLP 2.67 W/m2K, and 2.17 even with every feasible fabric measure; readiness threshold 2.0). 
+
+Your recommended plan includes loft insulation top-up to 270 mm, double glazing (modern A-rated), draught-proofing, solar PV panels, a home battery (5 kWh usable), and a smart thermostat with smart TRVs / zoning. This cuts carbon by 1159 kg per year (1.2 tonnes per year). The estimated cost is £20,730 mid (ranging from £15,100 to £27,480), saving £898 per year on bills with a 23.1 year payback, raising your band to C. Savings, costs and values are estimates, not guarantees.",N,N,1,Again links score 43 to band E.
+20,price,oil_bungalow,What if gas goes up to 10p per kWh?,gemini,"{""question_type"": ""what_if"", ""gas_price"": 0.1}",gemini,gemini-flash-lite-latest,True,,,"Regarding your question about gas going up to 10p per kWh, that cannot be estimated from the available facts because your bungalow currently uses an oil boiler rather than gas, with an oil usage of 13460 kWh per year and 0 kWh of gas per year. 
+
+Please note that savings, costs and values are estimates, not guarantees.",Y,Y,0,"Correct: oil-heated home, gas price has no effect."
+21,explain,listed_terrace,Explain my results.,gemini,"{""question_type"": ""explain_result""}",gemini,gemini-flash-lite-latest,True,,,"Your pre-1900 terraced home in the South West currently has a green home score of 46, placing it in the Poor class with an EPC-style band of D. Key issues include uninsulated walls, high energy use per m2, and no or little renewable generation. 
+
+Your baseline energy use is 3200 electricity kWh per year and 15000 gas kWh per year, costing 1787 GBP per year and emitting 3406 carbon kg per year (3.4 carbon tonnes per year). 
+
+Cavity wall insulation is not suitable because walls have no cavity to fill. Solid wall insulation and double glazing are not suitable because it is a listed building where wall insulation and replacement windows are restricted. An air source heat pump is not suitable because heat loss is too high for a heat pump to run efficiently. Solar PV panels are not suitable because roof panels are restricted for listed buildings, and a home battery is not suitable because solar is not available. 
+
+Savings are estimates, not guarantees.",Y,Y,0,"Correct, incl. listed-building reasons."
+22,explain,listed_terrace,Why is my score so low?,gemini,"{""question_type"": ""explain_result""}",gemini,gemini-flash-lite-latest,True,,,"Your current Green Home Score is 46, placing your home in the Poor class (provisional). 
+
+The key issues dragging your score down are that your walls are uninsulated, you have high energy use per m2, and there is no or little renewable generation. 
+
+Please note that savings, costs and values are estimates, not guarantees. 
+
+To help us refine your assessment, can you provide any missing information about your current heating habits or property layout not yet captured?",N,Y,1,Asks for 'missing information' that the engine did not request.
+23,what_if_add,listed_terrace,What if I add a heat pump?,gemini,"{""question_type"": ""what_if"", ""retrofits_add"": [""heat_pump""]}",gemini,gemini-flash-lite-latest,True,,,"An air source heat pump (space heating and hot water) is not suitable for your home. The reason is that heat loss is too high for a heat pump to run efficiently (HLP 3.16 W/m2K, and 2.74 even with every feasible fabric measure; readiness threshold 2.0). 
+
+Because it is not suitable, we cannot provide any savings for it. 
+
+Please note that savings, costs and values are estimates, not guarantees. A qualified assessor should confirm before any work.",Y,Y,0,Infeasible heat pump explained without savings.
+24,what_if_add,listed_terrace,What if I get solar panels and a battery?,gemini,"{""question_type"": ""what_if"", ""retrofits_add"": [""solar_pv"", ""battery""]}",gemini,gemini-flash-lite-latest,True,,,"Solar PV panels are not suitable for your home because roof panels are restricted as it is a listed building. A home battery (5 kWh usable) is also not suitable because a battery here stores solar power, and solar is not available for this home. 
+
+Because these measures are not suitable, savings for them cannot be estimated. 
+
+Please note that savings, costs and values are estimates, not guarantees. To help tailor your assessment further, could you please provide your missing information?",N,Y,1,Infeasible items explained correctly; then asks for unspecified 'missing information'.
+25,budget,listed_terrace,"What can I do with a budget of £3,000?",gemini,"{""budget"": 3000.0}",gemini,gemini-flash-lite-latest,True,,,"With your budget of £3,000.0, the recommended plan for your pre-1900 terraced home is a smart thermostat with smart TRVs / zoning. This mid-costs £450 (with a range of £250 to £800). It saves 1,186 kWh of gas per year, cuts bills by £75 per year, and reduces carbon by 217 kg per year (0.2 tonnes per year). The payback period is 6.0 years. Your Green Home Score will move from 46 (Poor) to 50 (Moderate), while your EPC-style band stays at D. 
+
+You can also add optional extras. Draught-proofing costs a mid-cost of £250 and gives an extra bill saving of £27. Suspended floor insulation has a mid-cost of £2,600 and an extra bill saving of £51. Loft insulation top-up to 270 mm has a mid-cost of £910 and an extra bill saving of £17. 
+
+Please note that savings, costs and values are estimates, not guarantees.",Y,Y,0,All figures match the facts.
+26,goal,listed_terrace,I want to cut my carbon as much as possible.,gemini,"{""goal"": ""cut_carbon""}",gemini,gemini-flash-lite-latest,True,,,"To cut your carbon as much as possible, your pre-1900 terraced home currently emits 3.4 tonnes of carbon per year and scores 46 (Poor) on your green home score. 
+
+Some requested retrofits are not suitable: cavity wall insulation cannot be fitted because walls have no cavity to fill; solid wall insulation, double glazing, and solar PV panels are restricted due to your home being a listed building. An air source heat pump is not suitable because heat loss is too high for it to run efficiently (HLP 3.16 W/m2K, and 2.74 even with every feasible fabric measure; readiness threshold 2.0). A home battery cannot be fitted because a battery stores solar power, and solar is not available for this home. 
+
+Your recommended plan includes loft insulation top-up to 270 mm, suspended floor insulation, draught-proofing, and a smart thermostat with smart TRVs / zoning. This plan saves 494 kg of carbon per year. Savings are estimates, not guarantees.",Y,Y,0,Correct; 'requested retrofits' wording slightly off.
+27,price,listed_terrace,What if gas goes up to 10p per kWh?,gemini,"{""question_type"": ""what_if"", ""gas_price"": 0.1}",gemini,gemini-flash-lite-latest,True,,,"Regarding your question about gas going up to 10p per kWh, that specific price change cannot be estimated from the available data. 
+
+For your pre-1900 terraced home in the South West, your current gas use is 15000 kWh per year alongside 3200 kWh of electricity, leading to a total annual bill of 2343 GBP. 
+
+If you follow the recommended plan of a smart thermostat with smart TRVs / zoning, which has a mid cost of 450 GBP (ranging from 250 to 800 GBP), you could achieve an estimated gas saving of 1186 kWh per year and a carbon saving of 217 kg per year. This plan gives a bill saving of 119 GBP per year with a payback of 3.8 years. Please note that savings are estimates, not guarantees. 
+
+Cavity wall insulation, solid wall insulation, double glazing, air source heat pumps, solar PV panels, and home batteries are not suitable for various reasons including listed building restrictions and high heat loss.",N,N,1,Claims the gas price change cannot be estimated; facts show it (bill saving 75 to 119).
+28,heat_pump_electricity,semi_gas_tierA,Why does my electricity go up with a heat pump?,gemini,"{""question_type"": ""explain_result"", ""retrofits_add"": [""heat_pump""]}",gemini,gemini-flash-lite-latest,True,,,"Your electricity use goes up because heating moves from gas or another fuel to electricity; total purchased energy and carbon still fall. 
+
+Your recommended plan will reduce your carbon by 2025 kg per year and your gas saving is 12220 kWh. Your electricity saving is -1013 kWh. 
+
+Please note that savings, costs and values are estimates, not guarantees.",Y,Y,0,Explains why electricity rises; figures match.
+29,heat_pump_electricity,semi_gas_tierA,Is a heat pump worth it if electricity costs 30p?,gemini,"{""question_type"": ""what_if"", ""retrofits_add"": [""heat_pump""], ""electricity_price"": 0.3}",gemini,gemini-flash-lite-latest,True,,,"An air source heat pump is included in your recommended plan, alongside loft insulation, cavity wall insulation, draught-proofing, solar PV panels, a 5 kWh usable home battery, and a smart thermostat with smart TRVs / zoning. Savings are estimates, not guarantees. 
+
+Your specific electricity cost of 30p is not in our data, so it cannot be estimated. However, the recommended plan as a whole saves 12220 kWh of gas and 190 kWh of electricity, with electricity use not rising. It reduces your carbon by 2274 kg per year (2.3 tonnes per year) and cuts your bills by 897 GBP per year. 
+
+The total mid cost is 24590 GBP, with a cost range between 17840 and 32330 GBP. The payback period is 27.4 years. Please note that solid wall insulation is not suitable because your walls are cavity walls, where cavity fill is the right measure.",N,N,1,Claims 30p electricity cannot be estimated; facts already reflect it.
+30,heat_pump_electricity,semi_gas_tierA,What if I add a heat pump without insulating first?,gemini,"{""question_type"": ""what_if"", ""retrofits_add"": [""heat_pump""]}",gemini,gemini-flash-lite-latest,True,,,"Adding an air source heat pump without the recommended insulation measures means the heat pump runs with an efficiency penalty, and heat pump readiness is not met in this package as HLP 2.01 W/m2K is above 2.0. Consequently, the SCOP is reduced to 2.99. 
+
+Please note that savings, costs and values are estimates, not guarantees. 
+
+If you choose the full recommended plan, your electricity use goes up by -1013 kWh because heating moves from gas or another fuel to electricity; total purchased energy and carbon still fall, with a gas saving of 12220 kWh and a carbon saving of 2025 kg per year (or 2.0 tonnes of carbon per year). Your electricity use rises, but total purchased energy and carbon still fall.",Y,N,0,Readiness penalty correct; says electricity 'goes up by -1013 kWh': sign error.
+31,infeasible,semi_gas_tierA,What about solid wall insulation?,gemini,"{""question_type"": ""what_if"", ""retrofits_add"": [""solid_wall_insulation""]}",gemini,gemini-flash-lite-latest,True,,,"Solid wall insulation (external or internal) is not suitable for your home. The reason given is that your walls are cavity walls, so cavity fill is the right measure instead. Because it is not suitable, savings for solid wall insulation cannot be estimated. 
+
+Please note that all savings are estimates, not guarantees.",Y,Y,0,Infeasible solid wall explained without savings.
+32,infeasible,semi_gas_tierA,Can I add solid wall insulation and floor insulation?,gemini,"{""question_type"": ""what_if"", ""retrofits_add"": [""solid_wall_insulation"", ""floor_insulation""]}",gemini,gemini-flash-lite-latest,True,,,"You cannot add solid wall insulation because your walls are cavity walls, meaning cavity fill is the right measure. 
+
+However, you can add suspended floor insulation, which is included in your recommended plan alongside cavity wall insulation, solar PV panels, and a smart thermostat with smart TRVs / zoning. 
+
+These improvements could save you 3904 kWh of gas per year and 970 kWh of electricity per year, cutting your carbon emissions by 915 kg per year (0.9 tonnes per year). The total mid cost is £10950, with a cost range between £7850 and £14510, and an estimated annual bill saving of £802. Your payback period would be 13.7 years, lifting your EPC-style band from D to B. 
+
+Please note that savings are estimates, not guarantees.",Y,Y,0,Splits infeasible and feasible requests correctly.
+33,infeasible,listed_terrace,Can I put solar panels on the roof?,gemini,"{""question_type"": ""what_if"", ""retrofits_add"": [""solar_pv""]}",gemini,gemini-flash-lite-latest,True,,,"You cannot put solar panels on your roof because it is a listed building, so roof panels are restricted. Therefore, savings cannot be estimated for them. 
+
+Savings, costs and values are estimates, not guarantees.",Y,Y,0,"Listed-building restriction explained, no savings."
+34,infeasible,listed_terrace,What if I replace the windows with double glazing?,gemini,"{""question_type"": ""what_if"", ""retrofits_add"": [""double_glazing""]}",gemini,gemini-flash-lite-latest,True,,,"Replacing your windows with modern A-rated double glazing is not suitable for your home. The reason given is: Listed building: replacement windows are restricted (secondary glazing may be possible). Because it is not suitable, savings cannot be estimated for it. 
+
+Please note that savings, costs and values are estimates, not guarantees.",Y,Y,0,"Listed-building restriction explained, no savings."
+35,infeasible,flat_rent_bills,Can I get a heat pump?,gemini,"{""question_type"": ""what_if"", ""retrofits_add"": [""heat_pump""]}",gemini,gemini-flash-lite-latest,True,,,"An air source heat pump for space heating and hot water cannot be included because you live in a rented home: a heat pump is the property owner's decision, so landlord consent is needed. Savings, costs and values are estimates, not guarantees.",Y,Y,0,"Tenant restriction explained, no savings."
+36,infeasible,flat_rent_bills,What if I install solar panels?,gemini,"{""question_type"": ""what_if"", ""retrofits_add"": [""solar_pv""]}",gemini,gemini-flash-lite-latest,True,,,"Solar PV panels are not suitable for your home because it is a rented home: solar panels are the property owner's decision (landlord consent needed). Because of this, we cannot give savings for them. 
+
+Please note that savings, costs and values are estimates, not guarantees.",Y,Y,0,"Tenant restriction explained, no savings."
+37,infeasible,flat_rent_bills,What about loft insulation?,gemini,"{""question_type"": ""what_if"", ""retrofits_add"": [""loft_insulation""]}",gemini,gemini-flash-lite-latest,True,,,"Loft insulation top-up to 270 mm is included in your recommended plan, alongside draught-proofing. 
+
+Please note that savings are estimates, not guarantees.",Y,Y,0,Correct but gives no figures (incomplete).
+38,tenant,flat_rent_bills,Explain my results.,gemini,"{""question_type"": ""explain_result""}",gemini,gemini-flash-lite-latest,True,,,"Your London flat (built 1967-1975) currently has a moderate Green Home Score of 51 and an EPC-style band of E. The main issues are that your EPC-style rating is low and your heating system is inefficient or high-carbon. 
+
+For your goal of value for money, the recommended plan is draught-proofing. This costs a mid-price of £250 (with a range of £100 to £450), saves 69 kWh of electricity per year, and reduces carbon by 14 kg per year. It cuts your yearly bills by £18, with a payback of 13.8 years. Please note that savings are estimates, not guarantees. 
+
+Cavity wall insulation and solid wall insulation are not suitable because walls are already insulated. Suspended floor insulation is not suitable because you have no ground floor (upper-floor flat). An air source heat pump, solar PV panels, and a home battery are not suitable because this is a rented home and they are the property owner's decision (landlord consent needed). A smart thermostat with smart TRVs / zoning is not suitable because direct electric or storage heaters need their own controls.",Y,Y,0,All figures and restrictions correct.
+39,tenant,flat_rent_bills,What can I do as a tenant?,gemini,{},gemini,gemini-flash-lite-latest,True,,,"As you live in a rented home, major changes like solar PV panels, a home battery, or an air source heat pump are the property owner's decision and landlord consent is needed. 
+
+For draught-proofing, your recommended plan costs a mid cost of 250 GBP (within a cost range of 100 to 450 GBP). It could save 18 GBP a year on bills, save 14 kg of carbon per year, and save 69 kWh of electricity. 
+
+Cavity wall insulation and solid wall insulation are not suitable because walls are already insulated. Suspended floor insulation is not suitable because you have no ground floor (upper-floor flat). A smart thermostat with smart TRVs / zoning is not suitable because direct electric or storage heaters need their own controls (not a wet-system thermostat). 
+
+Savings, costs and values are estimates, not guarantees. 
+
+To help me tailor this, please let me know your current heating schedule and if your landlord is open to minor improvements.",N,Y,1,"Correct content; asks for heating schedule and landlord attitude, which were not requested."
+40,tenant,flat_rent_bills,What if electricity drops to 20p?,gemini,"{""question_type"": ""what_if"", ""electricity_price"": 0.2}",gemini,gemini-flash-lite-latest,True,,,"Your energy assessment cannot be estimated for a drop in electricity to 20p, as that specific tariff change is not included in your facts. 
+
+Your current recommended plan is draught-proofing. This has a mid cost of £250 (within a range of £100 to £450) and an estimated bill saving of £14 per year. It is expected to save 14 kg of carbon per year and take 18.2 years to pay back. 
+
+Please note that savings are estimates, not guarantees. A qualified assessor should confirm before any work. 
+
+As your home is rented, cavity wall insulation, solid wall insulation, suspended floor insulation, air source heat pumps, solar PV panels, and home batteries are not suitable because they require landlord consent or are otherwise unsuitable. Smart thermostats are also not suitable as direct electric or storage heaters need their own controls.",N,N,1,Claims the 20p price cannot be estimated; facts show it (bill saving 18 to 14).
+41,reach_c,victorian_tierC,How do I reach band C?,gemini,"{""question_type"": ""what_if"", ""goal"": ""reach_c""}",gemini,gemini-flash-lite-latest,True,,,"To reach EPC band C from your current band E, your recommended plan includes a loft insulation top-up to 270 mm, solid wall insulation (external or internal), draught-proofing, and solar PV panels. 
+
+Note that savings are estimates, not guarantees. This plan will cost a mid-point of £15,000, with a cost range between £10,550 and £19,980. It is expected to save £916 per year on your bills and reduce carbon by 1,337 kg per year (1.3 tonnes per year). The payback period is 16.4 years, raising your green home score from 30 to 61. 
+
+If you are wondering about cavity wall insulation, it is not suitable because your walls have no cavity to fill.",Y,Y,0,All figures match the facts.
+42,reach_c,victorian_tierC,I want to reach band C without solid wall insulation,gemini,"{""question_type"": ""what_if"", ""retrofits_remove"": [""solid_wall_insulation""], ""goal"": ""reach_c""}",gemini,gemini-flash-lite-latest,True,,,"Your pre-1900 terraced home in the North West currently sits in EPC band E. You asked to reach band C without solid wall insulation, and our plan achieves this, lifting your rating to band C. 
+
+The recommended plan avoids solid wall insulation and instead includes a loft insulation top-up to 270 mm, suspended floor insulation, modern A-rated double glazing, draught-proofing, solar PV panels, and a smart thermostat with smart TRVs / zoning. 
+
+This package costs between £13,500 and £25,270, with a mid-cost of £18,800. It is estimated to save 884 kWh of electricity per year and 6564 kWh of gas per year, cutting carbon by 1384 kg per year (1.4 tonnes per year). Your yearly bills will reduce by £932, with a payback period of 20.2 years. 
+
+Regarding cavity wall insulation, it is not suitable because your walls have no cavity to fill. 
+
+Savings are estimates, not guarantees. A qualified assessor should confirm before any work.",Y,Y,0,All figures match the facts.
+43,reach_c,victorian_tierC,Can I reach band C for £8k?,gemini,"{""question_type"": ""what_if"", ""budget"": 8000.0, ""goal"": ""reach_c""}",gemini,gemini-flash-lite-latest,True,,,"No, you cannot reach band C for your £8,000 budget. No package within your constraints reaches band C; the closest reaches SAP 60 (band D). 
+
+Your current rating is band E, with a Green Home Score of 30, which is classed as Poor. Your key issues are that your EPC-style rating is low, your energy use per square metre is high, and your walls are uninsulated. Cavity wall insulation is not suitable because your walls have no cavity to fill.
+
+The recommended plan of draught-proofing, solar PV panels, and a smart thermostat with smart TRVs and zoning costs a mid-price of £7,520 (with a cost range between £5,530 and £9,710), brings you to band D, and gives a green home score after of 48, still classed as Poor. 
+
+Savings are estimates, not guarantees. This leaves you with questions: what is your current EPC certificate rating, and are you planning any further home improvements?",N,Y,1,"Correctly says band C is not reachable for £8k; asks for the EPC rating, which was already given (E)."
+44,reach_c,semi_gas_tierA,Can I get to an EPC C?,rules,{},gemini,gemini-flash-lite-latest,True,,,"Your home is currently in EPC-style band D, with a Green Home Score of 45. The recommended plan, featuring cavity wall insulation, does not reach band C, leaving the home in band D with a score of 51. 
+
+Savings are estimates, not guarantees. 
+
+Solid wall insulation is not suitable because your walls are cavity walls, so cavity fill is the right measure. 
+
+To help us check further, we are missing information regarding your specific loft insulation depth, heating controls, and glazing types.",N,Y,1,"Correctly says the plan stays at D; claims loft, controls and glazing info is missing, but it was given."
+45,missing_info,missing_info,Explain my results.,gemini,"{""question_type"": ""explain_result""}",gemini,gemini-flash-lite-latest,True,,,"To help explain your home energy assessment and work out your potential savings, I need a few more details from you first. 
+
+Could you please let me know roughly when the property was built? A range such as 1930-1949 is fine. I also need to know what the total floor area is in square metres, which you can find on your EPC or estimate from the number of rooms. Finally, please tell me what your main heating system is, whether that is a gas boiler, oil, LPG, electric, heat pump or something else. 
+
+Once you can provide this missing information, I will be able to properly run your assessment and explain your results in full.",Y,Y,0,Asks exactly the questions in the facts.
+46,missing_info,missing_info,What if I add a heat pump?,gemini,"{""question_type"": ""what_if"", ""retrofits_add"": [""heat_pump""]}",gemini,gemini-flash-lite-latest,True,,,"To check how a heat pump might work for your home, I need a few more details first, as this information is currently missing. 
+
+Could you let me know roughly when the property was built, such as a range like 1930-1949? I also need to know the total floor area in m2, which you can find on your EPC or estimate from the number of rooms. Finally, please tell me what your main heating system is, whether that is a gas boiler, oil, LPG, electric, heat pump, or something else. 
+
+Once you can share these details, we can look further into the options for your home.",Y,Y,0,Asks exactly the questions in the facts.
+47,missing_info,missing_info,How much will I save?,gemini,"{""goal"": ""cut_bills""}",gemini,gemini-flash-lite-latest,True,,,"Savings are estimates, not guarantees. To work out your potential savings and see what improvements might suit your home, we need a few more details first. 
+
+Could you please let me know roughly when the property was built? A range such as 1930-1949 is fine. 
+
+We also need to know what the total floor area is in m2. You can find this on your EPC, or estimate it from the number of rooms. 
+
+Finally, what is your main heating system? This could be a gas boiler, oil, LPG, electric, heat pump or something else. 
+
+Once you can share this information, we will be able to look at your home energy assessment properly.",Y,Y,0,Asks exactly the questions in the facts.
+48,conflict,conflict_hp_gas,Explain my results.,gemini,"{""question_type"": ""explain_result""}",gemini,gemini-flash-lite-latest,True,,,"We cannot complete your home energy assessment just yet because there is a conflict in your details. Your main heating is recorded as a heat pump, but your gas use is about 12,000 kWh a year, which is more than cooking alone would use. 
+
+Could you please let us know if gas is still used for heating or hot water? Once we have this information, we can properly assess your home energy use and potential savings. Please note that any future savings we provide will be estimates, not guarantees.",Y,Y,0,States the conflict and asks the clarifying question.
+49,conflict,conflict_hp_gas,What if I add solar?,gemini,"{""question_type"": ""what_if"", ""retrofits_add"": [""solar_pv""]}",gemini,gemini-flash-lite-latest,True,,,"We cannot estimate savings for adding solar because we do not have that information here. These figures are estimates, not guarantees. 
+
+Before we look at solar, we need to clear up a question about your home. Your main heating is given as a heat pump, but your gas use is about 12,000 kWh a year, which is more than cooking alone would use. Is gas still used for heating or hot water?",Y,Y,0,Declines solar savings and raises the conflict.
+50,solar_size,semi_gas_tierA,What if I add 3 kWp of solar?,gemini,"{""question_type"": ""what_if"", ""retrofits_add"": [""solar_pv""], ""solar_kwp"": 3.0}",gemini,gemini-flash-lite-latest,True,,,"Adding 3 kWp of solar is included in your recommended plan alongside cavity wall insulation and a smart thermostat with smart TRVs / zoning. 
+
+Please note that savings are estimates, not guarantees. 
+
+For the complete recommended plan, the estimated electricity saving is 821 kWh per year, and the gas saving is 3281 kWh per year. The overall bill saving is 634 GBP per year, and the carbon saving is 770 kg per year (0.8 tonnes per year). 
+
+The total cost for the plan has a mid-point of 7350 GBP, with a cost range between 5330 GBP and 9610 GBP. The payback period is estimated at 11.6 years. Implementing this plan will improve your EPC-style band from D to C, and raise your green home score from 45 to 69. 
+
+Electricity use does not rise for this plan.",Y,Y,0,All figures match the facts.
+51,solar_size,semi_gas_tierA,What about a 6 kWp solar system?,gemini,"{""question_type"": ""what_if"", ""retrofits_add"": [""solar_pv""], ""solar_kwp"": 6.0}",gemini,gemini-flash-lite-latest,True,,,"Your recommended plan includes Solar PV panels alongside cavity wall insulation and a smart thermostat with smart TRVs / zoning. The details for a specific 6 kWp solar system are not listed in the assessment, so that exact size cannot be estimated from the available facts. 
+
+However, the overall recommended package of improvements has a mid-cost of £8,890, with a cost range of £6,540 to £11,480. It can save you £775 per year on your bills and reduce carbon by 804 kg per year (or 0.8 tonnes per year). Please remember that savings are estimates, not guarantees. 
+
+Your current green home score is 45, which is classed as Poor, but this plan could raise your score to 70 and improve your EPC-style band from D to B. The payback period for the recommended plan is 11.5 years. If you would like to proceed or explore a specific system size, a qualified assessor should confirm the details before any work begins.",N,N,1,Claims 6 kWp cannot be estimated; the plan already uses it (the facts do not show the kWp).
+52,grid,semi_gas_tierA,What if the grid is much cleaner by 2035?,gemini,"{""question_type"": ""what_if"", ""grid_carbon_year"": 2035}",gemini,gemini-flash-lite-latest,True,,,"Regarding whether the grid is much cleaner by 2035, the provided assessment facts do not contain information to estimate this, so it cannot be answered here. 
+
+Your current semi home in Yorkshire and the Humber has a baseline carbon output of 2436 kg per year (or 2.4 tonnes per year) and an energy bill of 1603 GBP per year. 
+
+If you follow the recommended plan of cavity wall insulation, your gas saving is 2597 kWh per year, with a carbon saving of 475 kg per year (or 0.5 tonnes per year) and a bill saving of 163 GBP per year. Your electricity use does not rise. 
+
+Savings, costs and values are estimates, not guarantees. A qualified assessor should confirm before any work.",Y,N,0,Says the grid scenario cannot be answered and calls the 2035-adjusted carbon (2436 kg) the 'current' figure; the facts don't show the grid year.
+53,remove,semi_gas_tierA,Show me the plan without a heat pump.,gemini,"{""question_type"": ""what_if"", ""retrofits_remove"": [""heat_pump""]}",gemini,gemini-flash-lite-latest,True,,,"Here is your recommended plan without a heat pump. Your current home energy assessment suggests focusing on cavity wall insulation. 
+
+This improvement is estimated to save 2597 kWh of gas per year. Your carbon savings will be 475 kg per year (or 0.5 tonnes per year). Electricity use does not rise. 
+
+The mid-point cost for this work is £1200, with a cost range between £780 and £1710. The estimated bill saving is £163 per year, with a payback period of 7.3 years. Your green home score will move from 45 (Poor) to 51 (Moderate), while your EPC-style band stays at D. 
+
+Please note that savings are estimates, not guarantees. 
+
+If you are considering solid wall insulation (external or internal), please note it is not suitable because your walls are cavity walls: cavity fill is the right measure.",Y,Y,0,Correct.
+54,remove,semi_gas_tierA,What if I skip the smart thermostat?,gemini,"{""question_type"": ""what_if"", ""retrofits_remove"": [""smart_controls""]}",gemini,gemini-flash-lite-latest,True,,,"Skipping a smart thermostat is not an issue because it is not included in your recommended plan, which simply features cavity wall insulation. 
+
+Your recommended plan will cost a mid-point of £1200, with a cost range of £780 to £1710. It is projected to save 2597 kWh of gas per year, reduce your carbon by 475 kg per year (0.5 tonnes per year), and save £163 per year on your bills, with a payback period of 7.3 years. 
+
+Please note that savings are estimates, not guarantees. 
+
+We also have some missing information: your current heating schedule and specific smart thermostat model details are not listed in the assessment, so their potential impact cannot be estimated.",N,Y,1,Plan correct; claims heating schedule and thermostat details are missing (not requested).
+55,value,semi_gas_tierA,Will this increase my house value?,gemini,{},gemini,gemini-flash-lite-latest,True,,,"Whether this will increase your house value cannot be estimated with a band-based uplift because the package does not change the EPC-style band, meaning no band-based uplift is expected. The uplift percentage range is 0.0 to 0.0, and the uplift pounds range is £0.0 to £0.0. Please note that savings, costs and values are estimates, not guarantees. 
+
+Our data shows your 1950-1966 semi-detached home in Yorkshire and the Humber currently has a Poor green home score of 45 and sits in band D. The recommended plan suggests cavity wall insulation, which has a mid cost of £1,200 (within a range of £780 to £1,710) and a payback period of 7.3 years. It could save 2,597 kWh of gas per year and cut carbon by 475 kg per year (0.5 tonnes), lowering your bills by £163 per year and raising your green home score to 51 (Moderate). 
+
+Solid wall insulation is not suitable because your walls are cavity walls, where cavity fill is the right measure.",Y,Y,0,"Correctly says no band change, so no uplift; clunky '£0.0'."
+56,oil,oil_bungalow,How much oil will I save with a heat pump?,gemini,"{""retrofits_add"": [""heat_pump""]}",gemini,gemini-flash-lite-latest,True,,,"An air source heat pump (space heating and hot water) is not suitable for your home. The reason is that heat loss is too high for a heat pump to run efficiently (HLP 2.67 W/m2K, and 2.17 even with every feasible fabric measure; readiness threshold 2.0). Because it is not suitable, we cannot estimate oil savings for it. 
+
+Please note that savings are estimates, not guarantees.",Y,Y,0,Infeasible heat pump explained without oil savings.

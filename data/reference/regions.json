@@ -1,0 +1,37 @@
+{
+  "_meta": {
+    "status": "PLACEHOLDER. Monthly HDD (base 15.5 C) = national shape x regional factor; solar yield = PVGIS-style annual kWh/kWp x monthly fraction. Replace with SAP 10 Appendix U / Met Office / CIBSE degree-days and PVGIS values; record versions.",
+    "version": "0.1-placeholder",
+    "recorded": "2026-10-10"
+  },
+  "hdd_national_monthly": [340, 300, 280, 200, 120, 50, 20, 25, 60, 150, 260, 330],
+  "solar_monthly_fraction": [0.03, 0.045, 0.08, 0.11, 0.13, 0.13, 0.13, 0.115, 0.09, 0.065, 0.035, 0.04],
+  "regions": {
+    "london":           {"label": "London",                   "hdd_factor": 0.90, "solar_kwh_per_kwp": 950},
+    "south_east":       {"label": "South East",               "hdd_factor": 0.95, "solar_kwh_per_kwp": 980},
+    "south_west":       {"label": "South West",               "hdd_factor": 0.92, "solar_kwh_per_kwp": 1000},
+    "east":             {"label": "East of England",          "hdd_factor": 0.98, "solar_kwh_per_kwp": 960},
+    "east_midlands":    {"label": "East Midlands",            "hdd_factor": 1.03, "solar_kwh_per_kwp": 900},
+    "west_midlands":    {"label": "West Midlands",            "hdd_factor": 1.03, "solar_kwh_per_kwp": 900},
+    "wales":            {"label": "Wales",                    "hdd_factor": 1.02, "solar_kwh_per_kwp": 920},
+    "north_west":       {"label": "North West",               "hdd_factor": 1.06, "solar_kwh_per_kwp": 860},
+    "yorkshire":        {"label": "Yorkshire and the Humber", "hdd_factor": 1.08, "solar_kwh_per_kwp": 870},
+    "north_east":       {"label": "North East",               "hdd_factor": 1.12, "solar_kwh_per_kwp": 850},
+    "scotland":         {"label": "Scotland",                 "hdd_factor": 1.22, "solar_kwh_per_kwp": 820},
+    "northern_ireland": {"label": "Northern Ireland",         "hdd_factor": 1.15, "solar_kwh_per_kwp": 830}
+  },
+  "postcode_area_to_region": {
+    "london": ["E", "EC", "N", "NW", "SE", "SW", "W", "WC", "BR", "CR", "DA", "EN", "HA", "IG", "KT", "RM", "SM", "TW", "UB"],
+    "south_east": ["BN", "CT", "GU", "ME", "MK", "OX", "PO", "RG", "RH", "SL", "SO", "TN", "HP"],
+    "south_west": ["BA", "BH", "BS", "DT", "EX", "GL", "PL", "SN", "SP", "TA", "TQ", "TR"],
+    "east": ["AL", "CB", "CM", "CO", "IP", "LU", "NR", "PE", "SG", "SS", "WD"],
+    "east_midlands": ["DE", "LE", "LN", "NG", "NN"],
+    "west_midlands": ["B", "CV", "DY", "HR", "ST", "TF", "WR", "WS", "WV"],
+    "wales": ["CF", "LD", "LL", "NP", "SA", "SY"],
+    "north_west": ["BB", "BL", "CA", "CH", "CW", "FY", "L", "LA", "M", "OL", "PR", "SK", "WA", "WN"],
+    "yorkshire": ["BD", "DN", "HD", "HG", "HU", "HX", "LS", "S", "WF", "YO"],
+    "north_east": ["DH", "DL", "NE", "SR", "TS"],
+    "scotland": ["AB", "DD", "DG", "EH", "FK", "G", "HS", "IV", "KA", "KW", "KY", "ML", "PA", "PH", "TD", "ZE"],
+    "northern_ireland": ["BT"]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "_meta": {
+    "status": "PLACEHOLDER cost and effect ranges [low, mid, high]. Replace from EPC recommendation cost ranges, Energy Saving Trust figures and scheme documents; record source and date per row.",
+    "recorded": "2026-10-10",
+    "cost_units": "cost = fixed + per_unit x quantity, quantity from geometry (roof_m2, wall_m2, floor_m2, window_m2, kwp) or 1 for 'home'",
+    "disruption_levels": {"low": 1, "medium": 2, "high": 3}
+  },
+  "retrofits": {
+    "loft_insulation": {
+      "name": "Loft insulation top-up to 270 mm", "tier": 1, "disruption": "low",
+      "cost": {"fixed": [150, 250, 350], "per_unit": [8, 12, 16], "unit": "roof_m2"},
+      "effect": {"u_roof": [0.14, 0.16, 0.19]},
+      "needs_landlord_consent": false,
+      "source": "placeholder (EST / EPC recommendations, verify)"
+    },
+    "cavity_wall_insulation": {
+      "name": "Cavity wall insulation", "tier": 1, "disruption": "low",
+      "cost": {"fixed": [300, 400, 500], "per_unit": [6, 10, 15], "unit": "wall_m2"},
+      "effect": {"u_wall": [0.45, 0.55, 0.70]},
+      "needs_landlord_consent": true,
+      "source": "placeholder (EST / EPC recommendations, verify)"
+    },
+    "solid_wall_insulation": {
+      "name": "Solid wall insulation (external or internal)", "tier": 1, "disruption": "high",
+      "cost": {"fixed": [1000, 1500, 2000], "per_unit": [80, 120, 170], "unit": "wall_m2"},
+      "effect": {"u_wall": [0.26, 0.30, 0.40]},
+      "needs_landlord_consent": true,
+      "source": "placeholder (EST / EPC recommendations, verify)"
+    },
+    "floor_insulation": {
+      "name": "Suspended floor insulation", "tier": 1, "disruption": "medium",
+      "cost": {"fixed": [300, 400, 500], "per_unit": [25, 40, 60], "unit": "floor_m2"},
+      "effect": {"u_floor": [0.20, 0.25, 0.30]},
+      "needs_landlord_consent": true,
+      "source": "placeholder (EST / EPC recommendations, verify)"
+    },
+    "double_glazing": {
+      "name": "Double glazing (modern A-rated)", "tier": 1, "disruption": "medium",
+      "cost": {"fixed": [0, 0, 0], "per_unit": [400, 550, 750], "unit": "window_m2"},
+      "effect": {"u_window": [1.2, 1.4, 1.6]},
+      "needs_landlord_consent": true,
+      "source": "placeholder (EST / EPC recommendations, verify)"
+    },
+    "draught_proofing": {
+      "name": "Draught-proofing", "tier": 1, "disruption": "low",
+      "cost": {"fixed": [100, 250, 450], "per_unit": [0, 0, 0], "unit": "home"},
+      "effect": {"air_change_factor": [0.80, 0.85, 0.90]},
+      "needs_landlord_consent": false,
+      "source": "placeholder (EST, verify)"
+    },
+    "heat_pump": {
+      "name": "Air source heat pump (space heating and hot water)", "tier": 2, "disruption": "high",
+      "cost": {"fixed": [8000, 11000, 14500], "per_unit": [0, 0, 0], "unit": "home"},
+      "grant_gbp": 7500,
+      "grant_note": "Boiler Upgrade Scheme grant amount and eligibility: verify (England and Wales).",
+      "effect": {"scop": [2.6, 3.0, 3.5]},
+      "needs_landlord_consent": true,
+      "source": "placeholder (EST / MCS data, verify)"
+    },
+    "solar_pv": {
+      "name": "Solar PV panels", "tier": 3, "disruption": "low",
+      "cost": {"fixed": [1000, 1500, 2000], "per_unit": [1100, 1400, 1700], "unit": "kwp"},
+      "effect": {"yield_factor": [0.9, 1.0, 1.08], "f_sc_factor": [0.85, 1.0, 1.15]},
+      "needs_landlord_consent": true,
+      "source": "placeholder (EST / MCS, verify)"
+    },
+    "battery": {
+      "name": "Home battery (5 kWh usable)", "tier": 3, "disruption": "low",
+      "cost": {"fixed": [2800, 3800, 5000], "per_unit": [0, 0, 0], "unit": "home"},
+      "effect": {"battery_kwh": [5.0, 5.0, 5.0], "eta_rt": [0.85, 0.90, 0.92]},
+      "needs_landlord_consent": true,
+      "source": "placeholder (verify)"
+    },
+    "smart_controls": {
+      "name": "Smart thermostat with smart TRVs / zoning", "tier": 4, "disruption": "low",
+      "cost": {"fixed": [250, 450, 800], "per_unit": [0, 0, 0], "unit": "home"},
+      "effect": {"controls_factor": [0.83, 0.86, 0.92]},
+      "needs_landlord_consent": false,
+      "source": "placeholder (EST, verify)"
+    }
+  },
+  "presets": {
+    "quick_wins": {"label": "Quick wins", "disruption": "low", "budget": 1500, "tick": ["loft_insulation", "smart_controls", "draught_proofing"], "untick": ["heat_pump", "solid_wall_insulation", "solar_pv", "battery"]},
+    "fabric_first": {"label": "Fabric first", "tick": ["loft_insulation", "cavity_wall_insulation", "solid_wall_insulation", "floor_insulation", "double_glazing", "draught_proofing", "smart_controls"], "untick": ["heat_pump"]},
+    "heat_pump_ready": {"label": "Heat pump ready", "tick": ["heat_pump", "smart_controls"], "tick_hp_prerequisites": true},
+    "solar_and_smart": {"label": "Solar and smart", "tick": ["solar_pv", "battery", "smart_controls"], "only_ticked": true},
+    "full_green": {"label": "Full green", "tick_all_feasible": true}
+  }
+}

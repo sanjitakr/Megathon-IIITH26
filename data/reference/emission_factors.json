@@ -1,0 +1,21 @@
+{
+  "_meta": {
+    "status": "PLACEHOLDER from memory. Replace with the DESNZ/DEFRA Greenhouse gas reporting: conversion factors (kg CO2e per kWh, gross CV) and record the year and version.",
+    "source": "DESNZ/DEFRA GHG conversion factors (verify)",
+    "version": "2024 (verify)",
+    "recorded": "2026-10-10"
+  },
+  "default_year": 2024,
+  "factors": {
+    "electricity": 0.20705,
+    "gas": 0.18290,
+    "oil": 0.24677,
+    "lpg": 0.21449,
+    "solid": 0.32000
+  },
+  "grid_trajectory": {
+    "_note": "Illustrative sensitivity only (verify against DESNZ Green Book long-run marginal/average factors).",
+    "2024": 0.207, "2026": 0.17, "2028": 0.14, "2030": 0.10, "2035": 0.05, "2040": 0.03
+  },
+  "export_credited": false
+}
