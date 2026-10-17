@@ -1,5 +1,13 @@
 # LLOYDS - Green Home Score and Retrofit Recommendation Engine
 
+## Team
+
+* [**Sanjita Kumar**](https://github.com/sanjitakr)
+* [**Tanisha P**](https://github.com/TanishaP6174) 
+* [**Nandini S**](https://github.com/Nandini-0603) 
+* [**B Ananya Pai**](https://github.com/ananyapai585-blip)
+
+
 ## Requirements
 
 - Python 3.11 or 3.12, `make`
